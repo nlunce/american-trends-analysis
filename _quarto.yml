@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - '*.qmd'
+    - '!site_libs/'
+
+website:
+  title: 'American Trends'
+  navbar:
+    tools:
+      - icon: github
+        href: https://github.com/nlunce/math411
+    left:
+      - href: ./homework/index.qmd
+        text: Homework
+      - href: ./reality-checks/index.qmd
+        text: Reality Checks
+      - href: ./notes/index.qmd
+        text: Notes
+execute:
+  enabled: true
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    page-layout: full
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: 'Show the code'
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+      source: false
+      toggle: true
+      caption: See code
