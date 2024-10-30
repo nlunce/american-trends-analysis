@@ -10,14 +10,8 @@ website:
   navbar:
     tools:
       - icon: github
-        href: https://github.com/nlunce/math411
-    left:
-      - href: ./homework/index.qmd
-        text: Homework
-      - href: ./reality-checks/index.qmd
-        text: Reality Checks
-      - href: ./notes/index.qmd
-        text: Notes
+        href: https://github.com/nlunce/american-trends-analysis
+
 execute:
   enabled: true
 format:
