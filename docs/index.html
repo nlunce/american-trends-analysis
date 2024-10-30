@@ -158,8 +158,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="casualties-of-armed-conflicts" class="level1">
-<h1><strong>CASUALTIES OF ARMED CONFLICTS</strong></h1>
+<section id="global-armed-conflict-related-deaths" class="level1">
+<h1><strong>GLOBAL ARMED CONFLICT-RELATED DEATHS</strong></h1>
 <hr>
 <div id="cell-graph" class="cell" data-execution_count="2">
 <details class="code-fold">
@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x, y <span class="kw">in</span> <span class="bu">zip</span>(deaths_per_year[<span class="st">"year"</span>], deaths_per_year[<span class="st">"Total Deaths"</span>]):</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    plt.text(x, y <span class="op">+</span> <span class="bu">max</span>(deaths_per_year[<span class="st">"Total Deaths"</span>]) <span class="op">*</span> <span class="fl">0.02</span>, <span class="ss">f"</span><span class="sc">{</span>y<span class="sc">:,}</span><span class="ss">"</span>, ha<span class="op">=</span><span class="st">"center"</span>, va<span class="op">=</span><span class="st">"bottom"</span>, fontsize<span class="op">=</span><span class="dv">11</span>, weight<span class="op">=</span><span class="st">'bold'</span>)</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Total Deaths in Armed Conflicts (2001 - October 2024, Excluding Africa)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, weight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Global Armed Conflict-Related Deaths (2001 - October 2024, Excluding Africa)"</span>, fontsize<span class="op">=</span><span class="dv">16</span>, weight<span class="op">=</span><span class="st">'bold'</span>)</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Year"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Total Deaths"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
@@ -463,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="co2-emissions" class="level1">
-<h1><strong>CO2 Emissions</strong></h1>
+<h1><strong>CO2 EMISSIONS</strong></h1>
 <div id="cell-graph4" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show Code</summary>

@@ -17,7 +17,7 @@ from matplotlib.ticker import FuncFormatter
 import seaborn as sns
 ```
 
-# **CASUALTIES OF ARMED CONFLICTS**
+# **GLOBAL ARMED CONFLICT-RELATED DEATHS**
 ---
 
 ```{python}
@@ -86,7 +86,7 @@ biden = plt.axvspan(2020, 2024, color='lightblue', alpha=0.3, label="Biden/Harri
 for x, y in zip(deaths_per_year["year"], deaths_per_year["Total Deaths"]):
     plt.text(x, y + max(deaths_per_year["Total Deaths"]) * 0.02, f"{y:,}", ha="center", va="bottom", fontsize=11, weight='bold')
 
-plt.title("Total Deaths in Armed Conflicts (2001 - October 2024, Excluding Africa)", fontsize=16, weight='bold')
+plt.title("Global Armed Conflict-Related Deaths (2001 - October 2024, Excluding Africa)", fontsize=16, weight='bold')
 plt.xlabel("Year", fontsize=12)
 plt.ylabel("Total Deaths", fontsize=12)
 
@@ -290,7 +290,7 @@ plt.show()
   <img src="./images/homeless-camp.jpg" alt="Homeless Camp" style="width: 49%; height: 100%; object-fit: cover;"/>
 </div>
 
-# **CO2 Emissions**
+# **CO2 EMISSIONS**
 
 ```{python}
 #| label: graph4
