@@ -289,3 +289,66 @@ plt.show()
   <img src="./images/home.webp" alt="Home" style="width: 49%; height: 100%; object-fit: cover;"/>
   <img src="./images/homeless-camp.jpg" alt="Homeless Camp" style="width: 49%; height: 100%; object-fit: cover;"/>
 </div>
+
+# **CO2 Emissions**
+
+```{python}
+#| label: graph4
+#| code-summary: "Show Code"
+
+df = pl.read_csv("./data/annual-co2-emissions.csv").rename({
+    "Year": "year",
+    "Total Fossil Fuels CO2 Emissions (million metric tons) million metric tons": "co2_emission"})\
+.select(["year", "co2_emission"])\
+.filter((pl.col("year").is_between(2001, 2024)))
+
+
+# Convert DataFrame to Pandas for plotting
+df = df.to_pandas()
+
+
+plt.figure(figsize=(11, 7))
+plt.plot(df["year"], df["co2_emission"], marker='o', linestyle='-', color='#8B0000', linewidth=2)
+
+# Adding Presidential terms
+plt.axvspan(2001, 2008, color='red', alpha=0.5, label="Bush/Cheney")
+plt.axvspan(2008, 2016, color='blue', alpha=0.5, label="Obama/Biden")
+plt.axvspan(2016, 2020, color='lightcoral', alpha=0.3, label="Trump/Pence")
+plt.axvspan(2020, 2024, color='lightblue', alpha=0.3, label="Biden/Harris")
+
+# Annotate data points with values
+for x, y in zip(df["year"], df["co2_emission"]):
+    plt.text(x, y + max(df["co2_emission"]) * 0.02, f"{int(y):,}", ha="center", va="bottom", fontsize=10, weight='bold')
+
+# Title and labels
+plt.title(r"Annual CO2 Emissions from Fossil Fuels in the United States (2001 - 2024)", fontsize=18, weight='bold', pad=20)
+plt.xlabel("Year", fontsize=14, weight='bold')
+plt.ylabel(r"CO2 Emissions (Million Metric Tons)", fontsize=14, weight='bold')
+
+# Set y-axis limit to 10,000
+plt.ylim(4500, 6200)
+
+# Y-axis formatter for thousands separator
+plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{int(x):,}"))
+
+# Rotate x-axis labels
+plt.xticks(df["year"], rotation=45)
+
+# Grid setup
+plt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)
+
+# Legend for Presidential terms
+plt.legend(loc="lower left", fontsize=10, title="Presidential Terms")
+
+# Adjust layout to prevent overlap
+plt.tight_layout(pad=2)
+
+plt.show()
+```
+
+**Data Source:** [U.S. Energy Information Administration - Short-Term Energy Outlook](https://www.eia.gov/outlooks/steo/data/browser/#/?v=5)
+
+<div style="display: flex; justify-content: space-between; align-items: stretch;">
+  <img src="./images/traffic.webp" alt="Traffic" style="width: 49%; height: 100%; object-fit: cover;"/>
+  <img src="./images/co2.webp" alt="co2" style="width: 49%; height: 100%; object-fit: cover;"/>
+</div>
